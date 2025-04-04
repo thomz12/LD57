@@ -1,0 +1,8 @@
+## Juicebox project ignores
+
+# Text editor ignores, should be generated instead
+# Use `Edit > Open in [Your text editor]` in the Juicebox editor
+/.vscode/
+
+# Ignore exports directory
+/export/

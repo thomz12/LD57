@@ -1,0 +1,72 @@
+{
+ "children": [
+  {
+   "children": null,
+   "components": {
+    "camera": {
+     "clear": true,
+     "clearColor": {
+      "a": 1.0,
+      "b": 0.929411768913269,
+      "g": 0.5843137502670288,
+      "r": 0.3921568691730499
+     },
+     "farPlane": 100.0,
+     "height": 0,
+     "layers": 31,
+     "main": true,
+     "nearPlane": 0.0,
+     "render": true,
+     "useDepthStencil": true,
+     "width": 0,
+     "zoom": 1.0
+    },
+    "transform": {
+     "position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     }
+    },
+    "ui_element": {
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "dimensions": {
+      "x": 255.0,
+      "y": 255.0
+     },
+     "enabled": true,
+     "inputType": 3,
+     "offset": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "parentScale": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "pivot": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "rotation": 0.0
+    },
+    "ui_root": {
+     "scale": 1.0
+    }
+   },
+   "id": 1,
+   "name": "camera"
+  }
+ ],
+ "components": null,
+ "id": 0,
+ "name": "root"
+}
