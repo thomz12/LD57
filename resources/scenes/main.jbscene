@@ -3,6 +3,64 @@
   {
    "children": null,
    "components": {
+    "physics": {
+     "allowSleep": true,
+     "angularDamping": 0.5,
+     "bodyType": 2,
+     "fixRotation": false,
+     "gravityScale": 0.0,
+     "linearDamping": 0.5,
+     "projectile": false
+    },
+    "physics_box": {
+     "categoryBits": 1,
+     "categoryMask": 65535,
+     "density": 1.0,
+     "friction": 0.5,
+     "isSensor": false,
+     "restitution": 0.10000000149011612,
+     "size": {
+      "x": 32.0,
+      "y": 16.0
+     }
+    },
+    "scripts": {
+     "scripts": [
+      {
+       "data": {
+        "values": [
+         {
+          "name": "latency",
+          "type": 3,
+          "value": 0.0
+         }
+        ]
+       },
+       "script": {
+        "path": "scripts/submarine.lua"
+       }
+      }
+     ]
+    },
+    "transform": {
+     "position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     }
+    }
+   },
+   "id": 3,
+   "name": "submarine"
+  },
+  {
+   "children": null,
+   "components": {
     "camera": {
      "clear": true,
      "clearColor": {
