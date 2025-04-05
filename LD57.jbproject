@@ -3,6 +3,6 @@
  "engineVersion": "0.3.0",
  "globalScripts": null,
  "name": "LD57",
- "startScene": "",
+ "startScene": "scenes/main.jbscene",
  "version": "0.1.0"
 }

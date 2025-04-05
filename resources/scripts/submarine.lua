@@ -15,13 +15,13 @@ function update(delta)
     local input_time = time + latency
 
     -- Store inputs in buffer to be delayed.
-    if juice.input.is_key_held("a") then
+    if juice.input.is_key_held("a") or juice.input.is_key_held("left") then
         table.insert(input_buffer, { receive = input_time, cmd = "left"} )
-    elseif juice.input.is_key_held("d") then
+    elseif juice.input.is_key_held("d") or juice.input.is_key_held("right") then
         table.insert(input_buffer, { receive = input_time, cmd = "right"})
-    elseif juice.input.is_key_held("w") then
+    elseif juice.input.is_key_held("w") or juice.input.is_key_held("up") then
         table.insert(input_buffer, { receive = input_time, cmd = "up"})
-    elseif juice.input.is_key_held("s") then
+    elseif juice.input.is_key_held("s") or juice.input.is_key_held("down") then
         table.insert(input_buffer, { receive = input_time, cmd = "down"})
     end
 
