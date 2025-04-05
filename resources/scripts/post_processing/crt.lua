@@ -74,7 +74,7 @@ function start()
 end
 
 function update(delta)
-    time = time + delta
+    time = time + delta * 24
 end
 
 function post_render()

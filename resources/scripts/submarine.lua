@@ -1,5 +1,7 @@
 -- How long it takes in seconds for inputs to be received by the submarine.
 latency = 0.0
+max_latency = 2
+latency_progress = 0.0001
 
 -- Speed of the submarine along both axis.
 horizontal_speed = 8.0
@@ -9,6 +11,8 @@ local input_buffer = {}
 local time = 0.0
 
 function update(delta)
+
+    latency = juice.vec2.new(entity.transform.position):length() * latency_progress
 
     -- Keep track of time.
     time = time + delta
