@@ -1,6 +1,15 @@
 {
  "children": null,
  "components": {
+  "audio": {
+   "audioClip": {
+    "path": "audio/treasure.mp3"
+   },
+   "autoPlay": false,
+   "looping": false,
+   "pitch": 1.0,
+   "volume": 1.0
+  },
   "physics": {
    "allowSleep": true,
    "angularDamping": 0.009999999776482582,
@@ -18,6 +27,24 @@
    "isSensor": true,
    "radius": 4.284987926483154,
    "restitution": 0.10000000149011612
+  },
+  "scripts": {
+   "scripts": [
+    {
+     "data": {
+      "values": [
+       {
+        "name": "blink_speed",
+        "type": 3,
+        "value": 0.5
+       }
+      ]
+     },
+     "script": {
+      "path": "scripts/treasure.lua"
+     }
+    }
+   ]
   },
   "sprite": {
    "color": {
@@ -45,8 +72,8 @@
   },
   "transform": {
    "position": {
-    "x": 233.16665649414063,
-    "y": -191.5,
+    "x": 90.62499237060547,
+    "y": -168.375,
     "z": 0.0
    },
    "rotation": 0.0,

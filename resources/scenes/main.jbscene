@@ -3,13 +3,22 @@
   {
    "children": null,
    "components": {
+    "audio": {
+     "audioClip": {
+      "path": "audio/ping.mp3"
+     },
+     "autoPlay": false,
+     "looping": false,
+     "pitch": 1.0,
+     "volume": 1.0
+    },
     "physics": {
      "allowSleep": true,
      "angularDamping": 0.5,
      "bodyType": 2,
      "fixRotation": true,
      "gravityScale": 0.0,
-     "linearDamping": 0.25,
+     "linearDamping": 0.5,
      "projectile": false
     },
     "physics_box": {
@@ -30,14 +39,14 @@
        "data": {
         "values": [
          {
-          "name": "vertical_speed",
-          "type": 3,
-          "value": 4.0
-         },
-         {
           "name": "horizontal_speed",
           "type": 3,
           "value": 8.0
+         },
+         {
+          "name": "latency",
+          "type": 3,
+          "value": 0.10000000149011612
          },
          {
           "name": "game_over",
@@ -50,14 +59,14 @@
           "value": 1.0
          },
          {
+          "name": "vertical_speed",
+          "type": 3,
+          "value": 4.0
+         },
+         {
           "name": "latency_progress",
           "type": 3,
           "value": 0.0005000000237487257
-         },
-         {
-          "name": "latency",
-          "type": 3,
-          "value": 0.10000000149011612
          }
         ]
        },
@@ -1046,6 +1055,58 @@
      "name": "meter_latency"
     },
     {
+     "children": null,
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/flash.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 1.0,
+        "y": 1.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 0.0,
+        "b": 0.0,
+        "g": 1.0,
+        "r": 1.0
+       }
+      }
+     },
+     "id": 40,
+     "name": "flash_panel"
+    },
+    {
      "children": [
       {
        "children": null,
@@ -1260,6 +1321,15 @@
     }
    ],
    "components": {
+    "audio": {
+     "audioClip": {
+      "path": "audio/noise.mp3"
+     },
+     "autoPlay": false,
+     "looping": false,
+     "pitch": 1.0,
+     "volume": 1.0
+    },
     "camera": {
      "clear": true,
      "clearColor": {
@@ -1306,14 +1376,14 @@
        "data": {
         "values": [
          {
-          "name": "chrom",
-          "type": 3,
-          "value": 1.0
-         },
-         {
           "name": "crt_strenght",
           "type": 3,
           "value": 0.30000001192092896
+         },
+         {
+          "name": "chrom",
+          "type": 3,
+          "value": 1.0
          }
         ]
        },
@@ -17967,24 +18037,24 @@
    }
   },
   {
-   "id": 11,
+   "id": 12,
    "name": "treasure",
    "prefab": {
     "patch": [
      {
       "op": "replace",
       "path": "/components/transform/position/x",
-      "value": 190.50003051757813
+      "value": 72.55497741699219
      },
      {
       "op": "replace",
       "path": "/components/transform/position/y",
-      "value": -159.16668701171875
+      "value": -200.03811645507813
      },
      {
       "op": "replace",
       "path": "/id",
-      "value": 11
+      "value": 12
      }
     ],
     "path": "prefabs/treasure.jbprefab"
@@ -17998,17 +18068,641 @@
      {
       "op": "replace",
       "path": "/components/transform/position/x",
-      "value": 193.5
+      "value": 145.45822143554688
      },
      {
       "op": "replace",
       "path": "/components/transform/position/y",
-      "value": -224.1666717529297
+      "value": -240.36070251464844
      },
      {
       "op": "replace",
       "path": "/id",
       "value": 21
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 34,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 232.232421875
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -192.2961883544922
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 34
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 35,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 205.1356201171875
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -393.58648681640625
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 35
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 36,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 48.03885269165039
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -382.6187744140625
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 36
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 37,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -148.01336669921875
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -213.37142944335938
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 37
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 38,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -161.97653198242188
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -235.52198791503906
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 38
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 39,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -135.52491760253906
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -238.4252166748047
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 39
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 41,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 46.250030517578125
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -452.75
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 41
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 42,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -10.083328247070313
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -525.8333740234375
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 42
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 43,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -70.75001525878906
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -576.5
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 43
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 44,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -53.74998474121094
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -660.5000610351563
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 44
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 45,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 29.583328247070313
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -665.5000610351563
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 45
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 46,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -66.74998474121094
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -727.5000610351563
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 46
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 47,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 50.45988464355469
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -297.64276123046875
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 47
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 48,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -131.92108154296875
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -751.928466796875
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 48
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 49,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -181.44488525390625
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -794.3094482421875
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 49
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 50,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 99.03131866455078
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -608.5951538085938
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 50
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 51,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 143.31703186035156
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -675.738037109375
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 51
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 52,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 113.79325103759766
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -736.2141723632813
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 52
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 53,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 111.88848876953125
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -812.4046630859375
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 53
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 54,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 197.12652587890625
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -815.2618408203125
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 54
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 55,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 140.93609619140625
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -865.738037109375
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 55
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 56,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -128.58773803710938
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -859.0713500976563
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 56
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 57,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -20.016311645507813
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -880.4999389648438
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 57
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 58,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 85.22178649902344
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -904.78564453125
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 58
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 59,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 76.17418670654297
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -964.78564453125
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 59
+     }
+    ],
+    "path": "prefabs/treasure.jbprefab"
+   }
+  },
+  {
+   "id": 60,
+   "name": "treasure",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 37.60273742675781
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -1010.4999389648438
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 60
      }
     ],
     "path": "prefabs/treasure.jbprefab"

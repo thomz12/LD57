@@ -9,6 +9,7 @@ vertical_speed = 2.0
 
 local input_buffer = {}
 local time = 0.0
+local next_ping = 5.0
 
 local start_pos = juice.vec2.new(0, 0)
 game_over = false
@@ -24,7 +25,6 @@ function on_collision(_, other)
         if not game_over and on_game_over ~= nil then
             game_over = true
             on_game_over()
-            find_entity("main_camera").scripts.main_camera.shake_camera(3.0, 2.0)
         end
     end
 end
@@ -36,6 +36,12 @@ function on_physics(delta)
     -- Keep track of time.
     time = time + delta
     local input_time = time + latency
+
+    if time > next_ping and not game_over then
+        next_ping = time + 5.0
+        entity.audio.pitch = 1.0 + (math.random() - 0.5) * 0.1
+        entity.audio:play()
+    end
 
     -- Store inputs in buffer to be delayed.
     if juice.input.is_key_held("a") or juice.input.is_key_held("left") then
