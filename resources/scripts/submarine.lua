@@ -24,7 +24,7 @@ function on_collision(_, other)
         if not game_over and on_game_over ~= nil then
             game_over = true
             on_game_over()
-            find_entity("main_camera").scripts.main_camera.shake_camera(1.0, 2.0)
+            find_entity("main_camera").scripts.main_camera.shake_camera(3.0, 2.0)
         end
     end
 end
