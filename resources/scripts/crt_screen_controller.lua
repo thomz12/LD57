@@ -17,12 +17,13 @@ function update()
 end
 
 function on_game_over()
-    entity:find_child("game_ui").ui_element.enabled = false
-    entity:find_child("disconnected").ui_element.enabled = true
-    game_over = true
-    local box = entity:find_child("red_background")
-
     juice.routine.create(function()
+        entity:find_child("sonar_image").ui_image.image = juice.resources:load_texture("sprites/no_signal.png")
+        juice.routine.wait_seconds(2.0)
+        entity:find_child("game_ui").ui_element.enabled = false
+        entity:find_child("disconnected").ui_element.enabled = true
+        game_over = true
+        local box = entity:find_child("red_background")
         juice.routine.wait_seconds_func(1.0, function(x)
             box.ui_element.dimensions.y = x * 64
         end)

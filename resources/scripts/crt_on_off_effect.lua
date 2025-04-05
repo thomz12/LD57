@@ -23,6 +23,8 @@ function turn_on()
         juice.routine.wait_seconds_func(0.2, function(x)
             entity.ui_element.parent_scale.y = x
             entity.ui_panel.color.a = 1.0 - x
+            find_entity("crt_camera").scripts.crt.crt_strenght = 0.3 + (1.0 - x) * 4
+            find_entity("crt_camera").scripts.crt.chrom = 1.0 + (1.0 - x) * 10
         end)
         juice.routine.wait_seconds(1.5)
     end)
@@ -33,6 +35,8 @@ function turn_off()
         juice.routine.wait_seconds_func(0.1, function(x)
             entity.ui_element.parent_scale.y = 1.0 - x
             entity.ui_panel.color.a = x
+            find_entity("crt_camera").scripts.crt.crt_strenght = 0.3 + (x) * 4
+            find_entity("crt_camera").scripts.crt.chrom = 1.0 + (x) * 10
         end)
         juice.routine.wait_seconds(0.1)
         juice.routine.wait_seconds_func(0.1, function(x)

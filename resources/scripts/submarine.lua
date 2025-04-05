@@ -11,7 +11,7 @@ local input_buffer = {}
 local time = 0.0
 
 local start_pos = juice.vec2.new(0, 0)
-local game_over = false
+game_over = false
 
 function start()
     start_pos = juice.vec2.new(entity.transform.position)
