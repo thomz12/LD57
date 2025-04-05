@@ -1,0 +1,61 @@
+{
+ "children": null,
+ "components": {
+  "physics": {
+   "allowSleep": true,
+   "angularDamping": 0.009999999776482582,
+   "bodyType": 0,
+   "fixRotation": false,
+   "gravityScale": 1.0,
+   "linearDamping": 0.10000000149011612,
+   "projectile": false
+  },
+  "physics_circle": {
+   "categoryBits": 1,
+   "categoryMask": 65535,
+   "density": 1.0,
+   "friction": 0.5,
+   "isSensor": true,
+   "radius": 4.284987926483154,
+   "restitution": 0.10000000149011612
+  },
+  "sprite": {
+   "color": {
+    "a": 1.0,
+    "b": 1.0,
+    "g": 1.0,
+    "r": 1.0
+   },
+   "dimensions": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "offset": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "origin": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "pixelPerfect": true,
+   "texture": {
+    "path": "sprites/treasure.png"
+   }
+  },
+  "transform": {
+   "position": {
+    "x": 233.16665649414063,
+    "y": -191.5,
+    "z": 0.0
+   },
+   "rotation": 0.0,
+   "scale": {
+    "x": 1.0,
+    "y": 1.0
+   }
+  }
+ },
+ "id": 13,
+ "name": "treasure"
+}

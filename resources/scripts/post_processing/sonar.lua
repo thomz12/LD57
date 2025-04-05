@@ -3,7 +3,8 @@ sonar_speed = 1.0
 local angle = 0.0
 
 local command = juice.render_command.new()
-command.shader = juice.graphics:create_shader([[
+
+local vertex_shader = [[
 #version 330 core
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec2 aTex;
@@ -15,8 +16,11 @@ void main()
     texCoord = aTex;
 	gl_Position = vec4(aPos, 0.0, 1.0);
 }
-]], [[
+]]
+
+local fragment_shader = [[
 #version 330 core
+precision highp float;
 out vec4 FragColor;
 
 uniform vec2 RESOLUTION;
@@ -34,7 +38,15 @@ void main()
     color *= texture(_sonarTex, sonar * 0.5 + 0.5).r;
     FragColor = vec4(color, 1.0);
 }
-]])
+]]
+
+if juice.platform == "web" then
+    vertex_shader = vertex_shader:gsub("#version 330 core", "#version 300 es")
+    fragment_shader = fragment_shader:gsub("#version 330 core", "#version 300 es")
+end
+
+command.shader = juice.graphics:create_shader(vertex_shader, fragment_shader)
+
 command.vertex_buffer = juice.graphics:create_vertex_buffer({
     -1.0, -1.0, 0.0, 1.0,
      1.0,  1.0, 1.0, 0.0,
@@ -53,7 +65,7 @@ function start()
 end
 
 function update(delta)
-    angle = angle - delta * sonar_speed
+    angle = angle + delta * sonar_speed
 end
 
 function post_render()

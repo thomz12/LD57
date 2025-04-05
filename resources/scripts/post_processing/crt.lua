@@ -4,7 +4,8 @@ chrom = 1.0
 local time = 0.0
 
 local command = juice.render_command.new()
-command.shader = juice.graphics:create_shader([[
+
+local vertex_shader = [[
 #version 330 core
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec2 aTex;
@@ -16,8 +17,11 @@ void main()
     texCoord = aTex;
 	gl_Position = vec4(aPos, 0.0, 1.0);
 }
-]], [[
+]]
+
+local fragment_shader = [[
 #version 330 core
+precision highp float;
 out vec4 FragColor;
 
 uniform vec2 RESOLUTION;
@@ -38,7 +42,7 @@ void main()
 
     if (new.x > 0.0 && new.x < 1.0 && new.y > 0.0 && new.y < 1.0)
     {
-        float chrom = 1 / RESOLUTION.x * _chrom;
+        float chrom = 1.0 / RESOLUTION.x * _chrom;
         vec3 color;
         color.r = texture(_texture, vec2(new.x + chrom, new.y)).r;
         color.g = texture(_texture, vec2(new.x, new.y)).g;
@@ -47,17 +51,24 @@ void main()
         FragColor = vec4(color, 1.0);
 
         vec2 pixel_pos = new * RESOLUTION;
-        if(mod(floor((_time + pixel_pos.y) / 4), 2) < 1)
+        if(mod(floor((_time + pixel_pos.y) / 4.0), 2.0) < 1.0)
         {
             FragColor *= 0.99;
         }
     }
     else
     {
-        FragColor = vec4(0, 0, 0, 1);
+        FragColor = vec4(0.0, 0.0, 0.0, 1.0);
     }
 }
-]])
+]]
+
+if juice.platform == "web" then
+    vertex_shader = vertex_shader:gsub("#version 330 core", "#version 300 es")
+    fragment_shader = fragment_shader:gsub("#version 330 core", "#version 300 es")
+end
+
+command.shader = juice.graphics:create_shader(vertex_shader, fragment_shader)
 command.vertex_buffer = juice.graphics:create_vertex_buffer({
     -1.0, -1.0, 0.0, 1.0,
      1.0,  1.0, 1.0, 0.0,

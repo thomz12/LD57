@@ -10,9 +10,17 @@ vertical_speed = 2.0
 local input_buffer = {}
 local time = 0.0
 
-function update(delta)
+local start_pos = juice.vec2.new(0, 0)
 
-    latency = juice.vec2.new(entity.transform.position):length() * latency_progress
+function start()
+    start_pos = juice.vec2.new(entity.transform.position)
+    entity.physics.on_physics_update = on_physics
+end
+
+function on_physics(delta)
+
+    local pos = entity.transform.position
+    latency = juice.vec2.new(start_pos.x - pos.x, start_pos.y - pos.y):length() * latency_progress
 
     -- Keep track of time.
     time = time + delta
@@ -49,5 +57,4 @@ function update(delta)
             table.remove(input_buffer, 1)
         end
     end
-
 end

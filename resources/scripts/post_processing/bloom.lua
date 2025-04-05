@@ -25,8 +25,7 @@ blur_command.vertex_buffer = juice.graphics:create_vertex_buffer({
 cutoff_command.vertex_buffer = blur_command.vertex_buffer
 combine_command.vertex_buffer = blur_command.vertex_buffer
 
--- Create the shader.
-blur_command.shader = juice.graphics:create_shader([[
+local vertex_shader = [[
 #version 330 core
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec2 aTex;
@@ -38,47 +37,39 @@ void main()
     texCoord = aTex;
 	gl_Position = vec4(aPos, 0.0, 1.0);
 }
-]], [[
+]]
+
+local blur_fragment_shader = [[
 #version 330 core
+precision highp float;
 out vec4 FragColor;
 
 uniform vec2 RESOLUTION;
 
 uniform vec2 _direction;
 uniform sampler2D _texture;
-uniform float _weights[5] = float[] (0.227027, 0.1945946, 0.1216216, 0.054054, 0.016216);
+const float _weights[5] = float[] (0.227027, 0.1945946, 0.1216216, 0.054054, 0.016216);
 
 in vec2 texCoord;
 
 void main()
 {
-    vec2 texOffset = 1.0 / textureSize(_texture, 0);
+    vec2 texOffset = 1.0 / vec2(textureSize(_texture, 0));
     vec3 result = texture(_texture, texCoord).rgb * _weights[0];
 
     for(int i = 1; i < 5; ++i)
     {
-        result += texture(_texture, texCoord + texOffset * i * _direction).rgb * _weights[i];
-        result += texture(_texture, texCoord - texOffset * i * _direction).rgb * _weights[i];
+        result += texture(_texture, texCoord + texOffset * float(i) * _direction).rgb * _weights[i];
+        result += texture(_texture, texCoord - texOffset * float(i) * _direction).rgb * _weights[i];
     }
     
     FragColor = vec4(result, 1.0);
 }
-]])
+]]
 
-cutoff_command.shader = juice.graphics:create_shader([[
+local cutoff_fragment_shader = [[
 #version 330 core
-layout (location = 0) in vec2 aPos;
-layout (location = 1) in vec2 aTex;
-
-out vec2 texCoord;
-
-void main()
-{
-    texCoord = aTex;
-	gl_Position = vec4(aPos, 0.0, 1.0);
-}
-]], [[
-#version 330 core
+precision highp float;
 out vec4 FragColor;
 
 uniform sampler2D _texture;
@@ -88,32 +79,21 @@ in vec2 texCoord;
 void main()
 {
     vec4 color = texture(_texture, texCoord);
-    float lum = (color.r * 2 + color.b + color.g * 3) / 6.0;
+    float lum = (color.r * 2.0 + color.b + color.g * 3.0) / 6.0;
     if (lum > _cutoff)
     {
         FragColor = color;
     }
     else
     {
-        FragColor = vec4(0, 0, 0, 1);
+        FragColor = vec4(0.0, 0.0, 0.0, 1.0);
     }
 }
-]])
+]]
 
-combine_command.shader = juice.graphics:create_shader([[
+local combine_fragment_shader = [[
 #version 330 core
-layout (location = 0) in vec2 aPos;
-layout (location = 1) in vec2 aTex;
-
-out vec2 texCoord;
-
-void main()
-{
-    texCoord = aTex;
-	gl_Position = vec4(aPos, 0.0, 1.0);
-}
-]], [[
-#version 330 core
+precision highp float;
 out vec4 FragColor;
 
 uniform sampler2D _texture;
@@ -126,7 +106,19 @@ void main()
     vec3 bloom = texture(_bloom, texCoord).rgb;
     FragColor = vec4(color + bloom, 1.0);
 }
-]])
+]]
+
+if juice.platform == "web" then
+    vertex_shader = vertex_shader:gsub("#version 330 core", "#version 300 es")
+    blur_fragment_shader = blur_fragment_shader:gsub("#version 330 core", "#version 300 es")
+    cutoff_fragment_shader = cutoff_fragment_shader:gsub("#version 330 core", "#version 300 es")
+    combine_fragment_shader = combine_fragment_shader:gsub("#version 330 core", "#version 300 es")
+end
+
+-- Create the shaders.
+blur_command.shader = juice.graphics:create_shader(vertex_shader, blur_fragment_shader)
+cutoff_command.shader = juice.graphics:create_shader(vertex_shader, cutoff_fragment_shader)
+combine_command.shader = juice.graphics:create_shader(vertex_shader, combine_fragment_shader)
 
 function post_render()
     -- Make sure we have a source texture.
