@@ -1,6 +1,10 @@
 -- How long it takes in seconds for inputs to be received by the submarine.
 latency = 0.0
 
+-- Speed of the submarine along both axis.
+horizontal_speed = 8.0
+vertical_speed = 2.0
+
 local input_buffer = {}
 local time = 0.0
 
@@ -28,13 +32,13 @@ function update(delta)
 
             -- Process command.
             if cmd == "left" then
-                entity.physics:add_force(juice.vec2.new(-16, 0))
+                entity.physics:add_force(juice.vec2.new(-horizontal_speed, 0))
             elseif cmd == "right" then
-                entity.physics:add_force(juice.vec2.new(16, 0))
+                entity.physics:add_force(juice.vec2.new(horizontal_speed, 0))
             elseif cmd == "up" then
-                entity.physics:add_force(juice.vec2.new(0, 16))
+                entity.physics:add_force(juice.vec2.new(0, vertical_speed))
             elseif cmd == "down" then
-                entity.physics:add_force(juice.vec2.new(0, -16))
+                entity.physics:add_force(juice.vec2.new(0, -vertical_speed))
             end
 
             -- Remove the command.
