@@ -208,7 +208,7 @@
           "ui_element": {
            "anchor": {
             "x": 0.0,
-            "y": 0.5
+            "y": 0.0
            },
            "dimensions": {
             "x": 16.0,
@@ -226,7 +226,7 @@
            },
            "pivot": {
             "x": 0.0,
-            "y": 0.5
+            "y": 0.0
            },
            "rotation": 0.0
           },
@@ -253,7 +253,7 @@
           "ui_element": {
            "anchor": {
             "x": 1.0,
-            "y": 0.5
+            "y": 0.0
            },
            "dimensions": {
             "x": 54.0,
@@ -271,7 +271,7 @@
            },
            "pivot": {
             "x": 1.0,
-            "y": 0.5
+            "y": 0.0
            },
            "rotation": 0.0
           },
@@ -294,6 +294,54 @@
          },
          "id": 9,
          "name": "latency_text"
+        },
+        {
+         "children": null,
+         "components": {
+          "ui_element": {
+           "anchor": {
+            "x": 0.5,
+            "y": 1.0
+           },
+           "dimensions": {
+            "x": 32.0,
+            "y": 16.0
+           },
+           "enabled": true,
+           "inputType": 3,
+           "offset": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 1.0
+           },
+           "rotation": 0.0
+          },
+          "ui_text": {
+           "color": {
+            "a": 1.0,
+            "b": 0.0,
+            "g": 0.0,
+            "r": 0.0
+           },
+           "font": {
+            "path": "fonts/AldotheApache.ttf"
+           },
+           "fontSize": 16.0,
+           "horizontal": 1,
+           "text": "Latency",
+           "vertical": 1,
+           "wrapText": false
+          }
+         },
+         "id": 1048578,
+         "name": "entity"
         }
        ],
        "components": {
@@ -316,7 +364,7 @@
          },
          "dimensions": {
           "x": 90.0,
-          "y": 16.0
+          "y": 32.0
          },
          "enabled": true,
          "inputType": 3,
@@ -528,6 +576,192 @@
      },
      "id": 16,
      "name": "disconnected"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "layer": {
+         "layer": 16
+        },
+        "sprite": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "dimensions": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "origin": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pixelPerfect": false,
+         "texture": {
+          "path": "sprites/dial.png"
+         }
+        },
+        "transform": {
+         "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 1.0
+         },
+         "rotation": -11.0,
+         "scale": {
+          "x": 1.0,
+          "y": 1.0
+         }
+        }
+       },
+       "id": 19,
+       "name": "dial"
+      }
+     ],
+     "components": {
+      "layer": {
+       "layer": 16
+      },
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pixelPerfect": false,
+       "texture": {
+        "path": "sprites/dial_h_speed.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": -160.0,
+        "y": 0.0,
+        "z": -1.0
+       },
+       "rotation": 0.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       }
+      }
+     },
+     "id": 20,
+     "name": "meter_h_speed"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "layer": {
+         "layer": 16
+        },
+        "sprite": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "dimensions": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "origin": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pixelPerfect": false,
+         "texture": {
+          "path": "sprites/dial.png"
+         }
+        },
+        "transform": {
+         "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 1.0
+         },
+         "rotation": 124.0,
+         "scale": {
+          "x": 1.0,
+          "y": 1.0
+         }
+        }
+       },
+       "id": 23,
+       "name": "dial"
+      }
+     ],
+     "components": {
+      "layer": {
+       "layer": 16
+      },
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pixelPerfect": false,
+       "texture": {
+        "path": "sprites/dial_v_speed.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": -120.0,
+        "y": 0.0,
+        "z": -1.0
+       },
+       "rotation": 0.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       }
+      }
+     },
+     "id": 22,
+     "name": "meter_v_speed"
     }
    ],
    "components": {
@@ -596,7 +830,7 @@
     },
     "transform": {
      "position": {
-      "x": 0.0,
+      "x": 1000.0,
       "y": 10000.0,
       "z": 0.0
      },
