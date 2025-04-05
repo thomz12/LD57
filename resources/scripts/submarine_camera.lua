@@ -16,5 +16,6 @@ function update(delta)
             math.floor(target_pos.x + 0.5),
             math.floor(target_pos.y + 0.5),
             0.0)
+        entity.transform.rotation = target.physics.velocity.x
     end
 end

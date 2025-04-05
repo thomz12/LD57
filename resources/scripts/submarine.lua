@@ -11,14 +11,25 @@ local input_buffer = {}
 local time = 0.0
 
 local start_pos = juice.vec2.new(0, 0)
+local game_over = false
 
 function start()
     start_pos = juice.vec2.new(entity.transform.position)
     entity.physics.on_physics_update = on_physics
+    entity.physics_box.on_collision_start = on_collision
+end
+
+function on_collision(_, other)
+    if other.parent.name == "tilemap" then
+        if not game_over and on_game_over ~= nil then
+            game_over = true
+            on_game_over()
+            find_entity("main_camera").scripts.main_camera.shake_camera(1.0, 2.0)
+        end
+    end
 end
 
 function on_physics(delta)
-
     local pos = entity.transform.position
     latency = juice.vec2.new(start_pos.x - pos.x, start_pos.y - pos.y):length() * latency_progress
 
