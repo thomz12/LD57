@@ -23,7 +23,6 @@ out vec4 FragColor;
 uniform vec2 RESOLUTION;
 
 uniform sampler2D _texture;
-uniform sampler2D _sonarTex;
 uniform float _crtStrenght;
 uniform float _chrom;
 uniform float _time;
@@ -44,10 +43,6 @@ void main()
         color.r = texture(_texture, vec2(new.x + chrom, new.y)).r;
         color.g = texture(_texture, vec2(new.x, new.y)).g;
         color.b = texture(_texture, vec2(new.x - chrom, new.y)).b;
-
-        float angle = -_time * 0.1;
-        vec2 sonar = vec2(new.x - 0.5, new.y - 0.5) * mat2(cos(angle), sin(angle), -sin(angle), cos(angle));
-        color *= texture(_sonarTex, sonar * 0.5 + 0.5).r;
 
         FragColor = vec4(color, 1.0);
 
@@ -76,8 +71,7 @@ command.vertex_buffer = juice.graphics:create_vertex_buffer({
 })
 
 function start()
-    command:add_uniform_render_target("_texture", entity.scripts.bloom.target1)
-    command:add_uniform_texture("_sonarTex", juice.resources:load_texture("sprites/sonar.png"):get_resource())
+    command:add_uniform_render_target("_texture", entity.scripts.bloom.target1) 
 end
 
 function update(delta)
