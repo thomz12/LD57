@@ -44,7 +44,7 @@
          },
          "fontSize": 16.0,
          "horizontal": 1,
-         "text": "Launch Submarine",
+         "text": "[Space] To Deploy",
          "vertical": 1,
          "wrapText": false
         }
@@ -594,7 +594,56 @@
     {
      "children": [
       {
-       "children": null,
+       "children": [
+        {
+         "children": null,
+         "components": {
+          "ui_element": {
+           "anchor": {
+            "x": 0.5,
+            "y": 1.0
+           },
+           "dimensions": {
+            "x": 256.0,
+            "y": 32.0
+           },
+           "enabled": true,
+           "inputType": 3,
+           "offset": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 1.0
+           },
+           "rotation": 0.0
+          },
+          "ui_text": {
+           "color": {
+            "a": 1.0,
+            "b": 0.0,
+            "g": 0.0,
+            "r": 0.0
+           },
+           "font": {
+            "path": "fonts/AldotheApache.ttf"
+           },
+           "fontSize": 16.0,
+           "horizontal": 1,
+           "text": "Show Global Highscores",
+           "vertical": 1,
+           "wrapText": false
+          }
+         },
+         "id": 16,
+         "name": "scores_button_text"
+        }
+       ],
        "components": {
         "ui_element": {
          "anchor": {
@@ -602,17 +651,17 @@
           "y": 1.0
          },
          "dimensions": {
-          "x": 256.0,
-          "y": 16.0
+          "x": -4.0,
+          "y": 32.0
          },
          "enabled": true,
-         "inputType": 3,
+         "inputType": 2,
          "offset": {
           "x": 0.0,
-          "y": -3.0
+          "y": -2.0
          },
          "parentScale": {
-          "x": 0.0,
+          "x": 1.0,
           "y": 0.0
          },
          "pivot": {
@@ -621,25 +670,17 @@
          },
          "rotation": 0.0
         },
-        "ui_text": {
+        "ui_panel": {
          "color": {
           "a": 1.0,
           "b": 1.0,
           "g": 1.0,
           "r": 1.0
-         },
-         "font": {
-          "path": "fonts/AldotheApache.ttf"
-         },
-         "fontSize": 16.0,
-         "horizontal": 1,
-         "text": "Controls",
-         "vertical": 1,
-         "wrapText": false
+         }
         }
        },
-       "id": 1048588,
-       "name": "text"
+       "id": 1048591,
+       "name": "button_highscores"
       },
       {
        "children": null,
@@ -647,17 +688,17 @@
         "ui_element": {
          "anchor": {
           "x": 0.5,
-          "y": 1.0
+          "y": 0.0
          },
          "dimensions": {
           "x": 256.0,
-          "y": 16.0
+          "y": 32.0
          },
          "enabled": true,
          "inputType": 3,
          "offset": {
           "x": 0.0,
-          "y": -25.0
+          "y": 0.0
          },
          "parentScale": {
           "x": 0.0,
@@ -665,7 +706,7 @@
          },
          "pivot": {
           "x": 0.5,
-          "y": 1.0
+          "y": 0.0
          },
          "rotation": 0.0
         },
@@ -681,72 +722,52 @@
          },
          "fontSize": 16.0,
          "horizontal": 1,
-         "text": "[Arrows] Move",
+         "text": "Welcome, user",
          "vertical": 1,
          "wrapText": false
         }
        },
-       "id": 15,
-       "name": "text"
-      },
-      {
-       "children": null,
-       "components": {
-        "ui_element": {
-         "anchor": {
-          "x": 0.5,
-          "y": 1.0
-         },
-         "dimensions": {
-          "x": 256.0,
-          "y": 16.0
-         },
-         "enabled": true,
-         "inputType": 3,
-         "offset": {
-          "x": 0.0,
-          "y": -45.0
-         },
-         "parentScale": {
-          "x": 0.0,
-          "y": 0.0
-         },
-         "pivot": {
-          "x": 0.5,
-          "y": 1.0
-         },
-         "rotation": 0.0
-        },
-        "ui_text": {
-         "color": {
-          "a": 1.0,
-          "b": 1.0,
-          "g": 1.0,
-          "r": 1.0
-         },
-         "font": {
-          "path": "fonts/AldotheApache.ttf"
-         },
-         "fontSize": 16.0,
-         "horizontal": 1,
-         "text": "[Space] Start",
-         "vertical": 1,
-         "wrapText": false
-        }
-       },
-       "id": 16,
-       "name": "text"
+       "id": 5,
+       "name": "name_text"
       }
      ],
      "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": [
+           {
+            "name": "loading",
+            "type": 1,
+            "value": false
+           },
+           {
+            "name": "open",
+            "type": 1,
+            "value": false
+           },
+           {
+            "name": "loaded",
+            "type": 1,
+            "value": false
+           }
+          ]
+         },
+         "script": {
+          "path": "scripts/high_scores.lua"
+         }
+        }
+       ]
+      },
       "ui_element": {
        "anchor": {
-        "x": 0.0,
+        "x": 0.5,
         "y": 0.0
        },
        "dimensions": {
         "x": 256.0,
-        "y": 66.0
+        "y": 64.0
        },
        "enabled": true,
        "inputType": 3,
@@ -759,8 +780,8 @@
         "y": 0.0
        },
        "pivot": {
-        "x": 0.0,
-        "y": 0.0
+        "x": 0.5,
+        "y": 1.0
        },
        "rotation": 0.0
       },
@@ -774,7 +795,108 @@
       }
      },
      "id": 4,
-     "name": "bar"
+     "name": "high_score_widget"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 16.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "Created in 48 hours by Thom Zeilstra for Ludum Dare 57",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 17,
+       "name": "credits"
+      }
+     ],
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/top_bar.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 1.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 24.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 1.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.0
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 0.4470588266849518,
+        "b": 0.38823530077934265,
+        "g": 0.38823530077934265,
+        "r": 0.38823530077934265
+       }
+      }
+     },
+     "id": 1048588,
+     "name": "top_bar"
     }
    ],
    "components": {
@@ -829,8 +951,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 255.0,
-      "y": 255.0
+      "x": 718.0,
+      "y": 458.0
      },
      "enabled": true,
      "inputType": 3,

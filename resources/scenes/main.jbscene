@@ -1388,6 +1388,54 @@
        },
        "id": 91,
        "name": "green_background"
+      },
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": false,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": -56.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "[Space] to continue",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 94,
+       "name": "space_to_continue"
       }
      ],
      "components": {

@@ -1,4 +1,5 @@
 local game_over = false
+local won = false
 
 function start()
     find_entity("submarine").scripts.submarine.on_game_over = on_game_over
@@ -21,31 +22,43 @@ function update()
             end)
         end
     end
+
+    if won then
+        if juice.input.is_key_released("space") then
+            juice.routine.create(function()
+                entity:find_child("crt_on_off_effect").scripts.crt_on_off_effect.turn_off()
+                juice.routine.wait_seconds(0.5)
+                load_scene("scenes/main_menu.jbscene")
+            end)
+        end
+    end
 end
 
 function on_game_win()
     juice.routine.create(function()
-        entity:find_child("result").ui_element.enabled = true
-        juice.routine.wait_seconds(1.0)
-
-        entity:find_child("total_time").ui_element.enabled = true
 
         local time = find_entity("timer").scripts.timer.time
         local minutes = math.floor(time / 60)
         local seconds = math.floor(time % 60)
         entity:find_child("total_time").ui_text.text = string.format("Time: %02.f:%02.f", minutes, seconds)
-
+    
         local stats = {}
         stats["attempts"] = 1
-        stats["finish_time"] = math.floor(time)
+        stats["finish_time"] = 86400 - math.floor(time)
         stats["played_time"] = math.floor(time)
-
         if playfab.signed_in then
             playfab.update_player_statistics(stats, function(update_result, update_body)
-                juice.info("Stats update result: " .. update_result)
+                juice.info("Uploaded highscore")
             end)
         end
 
+        entity:find_child("result").ui_element.enabled = true
+        juice.routine.wait_seconds(1.0)
+
+        entity:find_child("total_time").ui_element.enabled = true
+
+        juice.routine.wait_seconds(1.0)
+        entity:find_child("space_to_continue").ui_element.enabled = true
     end)
 end
 
