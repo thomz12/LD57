@@ -4,11 +4,11 @@ local left
 local right
 
 function start()
+    entity.ui_element.enabled = true
     top = entity:find_child("black_top")
     bottom = entity:find_child("black_bottom")
     left = entity:find_child("black_left")
     right = entity:find_child("black_right")
-
     turn_on()
 end
 

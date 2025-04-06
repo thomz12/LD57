@@ -1,7 +1,192 @@
 {
  "children": [
   {
-   "children": null,
+   "children": [
+    {
+     "children": null,
+     "components": {
+      "layer": {
+       "layer": 8
+      },
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 0.7607843279838562,
+        "g": 1.0,
+        "r": 0.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pixelPerfect": true,
+       "texture": {
+        "path": "sprites/arrow.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": 0.0,
+        "y": 16.0,
+        "z": 0.0
+       },
+       "rotation": 0.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       }
+      }
+     },
+     "id": 79,
+     "name": "arrow_up"
+    },
+    {
+     "children": null,
+     "components": {
+      "layer": {
+       "layer": 8
+      },
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 0.7607843279838562,
+        "g": 1.0,
+        "r": 0.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pixelPerfect": true,
+       "texture": {
+        "path": "sprites/arrow.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": 0.0,
+        "y": -16.0,
+        "z": 0.0
+       },
+       "rotation": 180.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       }
+      }
+     },
+     "id": 80,
+     "name": "arrow_down"
+    },
+    {
+     "children": null,
+     "components": {
+      "layer": {
+       "layer": 8
+      },
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 0.7607843279838562,
+        "g": 1.0,
+        "r": 0.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pixelPerfect": true,
+       "texture": {
+        "path": "sprites/arrow.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": -26.0,
+        "y": 0.0,
+        "z": 0.0
+       },
+       "rotation": 90.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       }
+      }
+     },
+     "id": 81,
+     "name": "arrow_left"
+    },
+    {
+     "children": null,
+     "components": {
+      "layer": {
+       "layer": 8
+      },
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 0.7607843279838562,
+        "g": 1.0,
+        "r": 0.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pixelPerfect": true,
+       "texture": {
+        "path": "sprites/arrow.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": 26.0,
+        "y": 0.0,
+        "z": 0.0
+       },
+       "rotation": -90.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       }
+      }
+     },
+     "id": 82,
+     "name": "arrow_right"
+    }
+   ],
    "components": {
     "audio": {
      "audioClip": {
@@ -46,7 +231,7 @@
          {
           "name": "latency_progress",
           "type": 3,
-          "value": 0.0005000000237487257
+          "value": 0.0006000000284984708
          },
          {
           "name": "horizontal_speed",
@@ -559,7 +744,7 @@
          "inputType": 3,
          "offset": {
           "x": 0.0,
-          "y": -7.0
+          "y": -8.0
          },
          "parentScale": {
           "x": 0.0,
@@ -590,6 +775,72 @@
        },
        "id": 77,
        "name": "treasure_label"
+      },
+      {
+       "children": null,
+       "components": {
+        "scripts": {
+         "scripts": [
+          {
+           "data": {
+            "values": [
+             {
+              "name": "time",
+              "type": 3,
+              "value": 0.0
+             }
+            ]
+           },
+           "script": {
+            "path": "scripts/timer.lua"
+           }
+          }
+         ]
+        },
+        "ui_element": {
+         "anchor": {
+          "x": 1.0,
+          "y": 1.0
+         },
+         "dimensions": {
+          "x": 90.0,
+          "y": 16.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": -8.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 1.0,
+          "y": 1.0
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "00:00",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 83,
+       "name": "timer"
       }
      ],
      "components": {
@@ -1412,7 +1663,7 @@
         "x": 0.0,
         "y": 4.0
        },
-       "enabled": true,
+       "enabled": false,
        "inputType": 3,
        "offset": {
         "x": 0.0,

@@ -11,6 +11,11 @@ local input_buffer = {}
 local time = 0.0
 local next_ping = 5.0
 
+local arrow_up
+local arrow_down
+local arrow_left
+local arrow_right
+
 local start_pos = juice.vec2.new(0, 0)
 game_over = false
 
@@ -18,6 +23,11 @@ function start()
     start_pos = juice.vec2.new(entity.transform.position)
     entity.physics.on_physics_update = on_physics
     entity.physics_box.on_collision_start = on_collision
+
+    arrow_up = entity:find_child("arrow_up")
+    arrow_down = entity:find_child("arrow_down")
+    arrow_left = entity:find_child("arrow_left")
+    arrow_right = entity:find_child("arrow_right")
 end
 
 function on_collision(_, other)
@@ -63,6 +73,11 @@ function on_physics(delta)
         table.insert(input_buffer, { receive = input_time, cmd = "down"})
     end
 
+    arrow_up.sprite.color.a = 0
+    arrow_down.sprite.color.a = 0
+    arrow_left.sprite.color.a = 0
+    arrow_right.sprite.color.a = 0
+
     -- If there is an item in the input buffer, try to process it.
     if #input_buffer > 0 then
         if input_buffer[1].receive <= time then
@@ -71,12 +86,16 @@ function on_physics(delta)
             -- Process command.
             if cmd == "left" then
                 entity.physics:add_force(juice.vec2.new(-horizontal_speed, 0))
+                arrow_left.sprite.color.a = 1
             elseif cmd == "right" then
                 entity.physics:add_force(juice.vec2.new(horizontal_speed, 0))
+                arrow_right.sprite.color.a = 1
             elseif cmd == "up" then
                 entity.physics:add_force(juice.vec2.new(0, vertical_speed))
+                arrow_up.sprite.color.a = 1
             elseif cmd == "down" then
                 entity.physics:add_force(juice.vec2.new(0, -vertical_speed))
+                arrow_down.sprite.color.a = 1
             end
 
             -- Remove the command.
