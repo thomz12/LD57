@@ -23,6 +23,20 @@ function update()
     end
 end
 
+function on_game_win()
+    juice.routine.create(function()
+        entity:find_child("result").ui_element.enabled = true
+        juice.routine.wait_seconds(1.0)
+
+        entity:find_child("total_time").ui_element.enabled = true
+
+        local time = find_entity("timer").scripts.timer.time
+        local minutes = math.floor(time / 60)
+        local seconds = math.floor(time % 60)
+        entity:find_child("total_time").ui_text.text = string.format("Time: %02.f:%02.f", minutes, seconds)
+    end)
+end
+
 function on_game_over()
     entity.audio:play()
     juice.routine.create(function()

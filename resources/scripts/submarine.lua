@@ -22,6 +22,7 @@ started = false
 ping_time = 5.0
 ping_pitch_add = 0.0
 local no_move_time = 0.0
+won = false
 
 function start()
     start_pos = juice.vec2.new(entity.transform.position)
@@ -35,7 +36,7 @@ function start()
 end
 
 function on_collision(_, other)
-    if other.parent.name == "tilemap" then
+    if not won and other.parent.name == "tilemap" then
         if not game_over and on_game_over ~= nil then
             game_over = true
             on_game_over()
@@ -44,6 +45,10 @@ function on_collision(_, other)
 end
 
 function on_physics(delta)
+    if game_over then
+        return
+    end
+
     local pos = entity.transform.position
     latency = juice.vec2.new(start_pos.x - pos.x, start_pos.y - pos.y):length() * latency_progress
 
@@ -52,7 +57,7 @@ function on_physics(delta)
     no_move_time = no_move_time + delta
     local input_time = time + latency
 
-    if time - last_ping > ping_time and not game_over then
+    if time - last_ping > ping_time and not game_over and not won then
         last_ping = time
         entity.audio.pitch = 1.0 + (math.random() - 0.5) * 0.1 + ping_pitch_add
         entity.audio:play()
