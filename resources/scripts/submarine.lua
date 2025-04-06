@@ -9,7 +9,7 @@ vertical_speed = 2.0
 
 local input_buffer = {}
 local time = 0.0
-local next_ping = 5.0
+local last_ping = 0.0
 
 local arrow_up
 local arrow_down
@@ -19,6 +19,8 @@ local arrow_right
 local start_pos = juice.vec2.new(0, 0)
 game_over = false
 started = false
+ping_time = 5.0
+ping_pitch_add = 0.0
 local no_move_time = 0.0
 
 function start()
@@ -50,9 +52,9 @@ function on_physics(delta)
     no_move_time = no_move_time + delta
     local input_time = time + latency
 
-    if time > next_ping and not game_over then
-        next_ping = time + 5.0
-        entity.audio.pitch = 1.0 + (math.random() - 0.5) * 0.1
+    if time - last_ping > ping_time and not game_over then
+        last_ping = time
+        entity.audio.pitch = 1.0 + (math.random() - 0.5) * 0.1 + ping_pitch_add
         entity.audio:play()
 
         juice.routine.create(function()
