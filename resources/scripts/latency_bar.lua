@@ -23,13 +23,20 @@ end
 function update(delta)
     time = time + delta
     if submarine ~= nil and time >= update_wait then
-        local progress = submarine.scripts.submarine.latency / submarine.scripts.submarine.max_latency
-        local status = 5 - math.floor(progress * 5)
-        status = math.min(5, math.max(0, status))
+        if not submarine.scripts.submarine.game_over then
+            local progress = submarine.scripts.submarine.latency / submarine.scripts.submarine.max_latency
+            local status = 5 - math.floor(progress * 5)
+            status = math.min(5, math.max(0, status))
 
-        image.ui_image.image = juice.resources:load_texture("sprites/ui/status_" .. status .. ".png")
-        entity.ui_panel.color = status_colors[status + 1]
-        text.ui_text.text = tostring(math.floor(submarine.scripts.submarine.latency * 1000)) .. " ms"
+            image.ui_image.image = juice.resources:load_texture("sprites/ui/status_" .. status .. ".png")
+            entity.ui_panel.color = status_colors[status + 1]
+            text.ui_text.text = tostring(math.floor(submarine.scripts.submarine.latency * 1000)) .. " ms"
+        else
+            update_wait = 0.1
+            image.ui_image.image = juice.resources:load_texture("sprites/ui/status_" .. math.random(0, 5) .. ".png")
+            entity.ui_panel.color = status_colors[math.random(1, 6)]
+            text.ui_text.text = tostring(math.random(0, 1000)) .. " ms"
+        end
         time = 0.0
     end
 end

@@ -19,6 +19,7 @@ local arrow_right
 local start_pos = juice.vec2.new(0, 0)
 game_over = false
 started = false
+local no_move_time = 0.0
 
 function start()
     start_pos = juice.vec2.new(entity.transform.position)
@@ -46,6 +47,7 @@ function on_physics(delta)
 
     -- Keep track of time.
     time = time + delta
+    no_move_time = no_move_time + delta
     local input_time = time + latency
 
     if time > next_ping and not game_over then
@@ -82,6 +84,7 @@ function on_physics(delta)
     -- If there is an item in the input buffer, try to process it.
     if #input_buffer > 0 then
         started = true
+        no_move_time = 0.0
         if input_buffer[1].receive <= time then
             local cmd = input_buffer[1].cmd
 
@@ -103,5 +106,12 @@ function on_physics(delta)
             -- Remove the command.
             table.remove(input_buffer, 1)
         end
+    end
+
+    if no_move_time > 10.0 then
+        arrow_up.sprite.color.a = math.floor((time * 4) % 2)
+        arrow_down.sprite.color.a = math.floor((time * 4) % 2)
+        arrow_left.sprite.color.a = math.floor((time * 4) % 2)
+        arrow_right.sprite.color.a = math.floor((time * 4) % 2)
     end
 end

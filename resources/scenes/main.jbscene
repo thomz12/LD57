@@ -241,7 +241,12 @@
          {
           "name": "latency",
           "type": 3,
-          "value": 0.10000000149011612
+          "value": 0.0
+         },
+         {
+          "name": "started",
+          "type": 1,
+          "value": false
          },
          {
           "name": "vertical_speed",
@@ -250,11 +255,6 @@
          },
          {
           "name": "game_over",
-          "type": 1,
-          "value": false
-         },
-         {
-          "name": "started",
           "type": 1,
           "value": false
          }
