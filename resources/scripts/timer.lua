@@ -9,7 +9,7 @@ end
 function update(delta)
     if player.scripts.submarine.game_over then
         time = time + delta * 500
-    else
+    elseif player.scripts.submarine.started then
         time = time + delta
     end
     local minutes = math.floor(time / 60)

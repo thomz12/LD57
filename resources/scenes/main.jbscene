@@ -252,6 +252,11 @@
           "name": "game_over",
           "type": 1,
           "value": false
+         },
+         {
+          "name": "started",
+          "type": 1,
+          "value": false
          }
         ]
        },
@@ -485,7 +490,7 @@
            "enabled": true,
            "inputType": 3,
            "offset": {
-            "x": 0.0,
+            "x": -5.0,
             "y": 1.0
            },
            "parentScale": {
@@ -19560,14 +19565,14 @@
     },
     "transform": {
      "position": {
-      "x": 95.00000762939453,
-      "y": -550.6362915039063,
+      "x": 48.636348724365234,
+      "y": -729.363525390625,
       "z": 0.0
      },
      "rotation": 0.0,
      "scale": {
       "x": 76.0,
-      "y": 38.0
+      "y": 24.0
      }
     }
    },

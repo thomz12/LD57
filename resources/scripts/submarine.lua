@@ -18,6 +18,7 @@ local arrow_right
 
 local start_pos = juice.vec2.new(0, 0)
 game_over = false
+started = false
 
 function start()
     start_pos = juice.vec2.new(entity.transform.position)
@@ -80,6 +81,7 @@ function on_physics(delta)
 
     -- If there is an item in the input buffer, try to process it.
     if #input_buffer > 0 then
+        started = true
         if input_buffer[1].receive <= time then
             local cmd = input_buffer[1].cmd
 
