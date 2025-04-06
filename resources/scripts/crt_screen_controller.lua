@@ -35,6 +35,7 @@ function update()
 end
 
 function on_game_win()
+    won = true
     juice.routine.create(function()
 
         local time = find_entity("timer").scripts.timer.time
