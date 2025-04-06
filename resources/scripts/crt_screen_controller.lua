@@ -13,6 +13,13 @@ function update()
                 load_scene("scenes/main.jbscene")
             end)
         end
+        if juice.input.is_key_released("escape") then
+            juice.routine.create(function()
+                entity:find_child("crt_on_off_effect").scripts.crt_on_off_effect.turn_off()
+                juice.routine.wait_seconds(0.5)
+                load_scene("scenes/main_menu.jbscene")
+            end)
+        end
     end
 end
 
@@ -40,5 +47,7 @@ function on_game_over()
         end)
         juice.routine.wait_seconds(1.0)
         entity:find_child("retry").ui_element.enabled = true
+        juice.routine.wait_seconds(1.0)
+        entity:find_child("exit").ui_element.enabled = true
     end)
 end

@@ -24,6 +24,11 @@ function update(delta)
     time = time + delta
     if submarine ~= nil and time >= update_wait then
         if not submarine.scripts.submarine.game_over then
+
+            if submarine.scripts.submarine.latency > 0.1 then
+                entity.ui_element.enabled = true
+            end
+
             local progress = submarine.scripts.submarine.latency / submarine.scripts.submarine.max_latency
             local status = 5 - math.floor(progress * 5)
             status = math.min(5, math.max(0, status))

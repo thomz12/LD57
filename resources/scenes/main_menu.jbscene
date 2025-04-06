@@ -1,0 +1,862 @@
+{
+ "children": [
+  {
+   "children": [
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "Launch Submarine",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 10,
+       "name": "play_text"
+      }
+     ],
+     "components": {
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 200.0,
+        "y": 32.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 1.0,
+        "b": 0.2552119195461273,
+        "g": 0.9915611743927002,
+        "r": 0.27385371923446655
+       }
+      }
+     },
+     "id": 9,
+     "name": "button_play"
+    },
+    {
+     "children": null,
+     "components": {
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 1.0
+       },
+       "dimensions": {
+        "x": 256.0,
+        "y": 24.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": -16.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 1.0
+       },
+       "rotation": 0.0
+      },
+      "ui_text": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "font": {
+        "path": "fonts/AldotheApache.ttf"
+       },
+       "fontSize": 24.0,
+       "horizontal": 1,
+       "text": "Ctrl + Dive",
+       "vertical": 1,
+       "wrapText": false
+      }
+     },
+     "id": 11,
+     "name": "title"
+    },
+    {
+     "children": null,
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/main_menu.lua"
+         }
+        }
+       ]
+      },
+      "ui_9_slice": {
+       "border": 8.0,
+       "color": {
+        "a": 1.0,
+        "b": 0.0,
+        "g": 0.607594907283783,
+        "r": 1.0
+       },
+       "image": {
+        "path": "sprites/selection.png"
+       }
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 200.0,
+        "y": 32.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      }
+     },
+     "id": 13,
+     "name": "selection"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.0
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "parentScale": {
+          "x": 100000.0,
+          "y": 100000.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "rotation": 0.0
+        },
+        "ui_panel": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         }
+        }
+       },
+       "id": 27,
+       "name": "black_bottom"
+      },
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "parentScale": {
+          "x": 100000.0,
+          "y": 100000.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.0
+         },
+         "rotation": 0.0
+        },
+        "ui_panel": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         }
+        }
+       },
+       "id": 28,
+       "name": "black_top"
+      },
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.0,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "parentScale": {
+          "x": 0.5,
+          "y": 16.0
+         },
+         "pivot": {
+          "x": 0.0,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_panel": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         }
+        }
+       },
+       "id": 29,
+       "name": "black_left"
+      },
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 1.0,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "parentScale": {
+          "x": 0.5,
+          "y": 16.0
+         },
+         "pivot": {
+          "x": 1.0,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_panel": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         }
+        }
+       },
+       "id": 30,
+       "name": "black_right"
+      }
+     ],
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/crt_on_off_effect.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 4.0
+       },
+       "enabled": false,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 1.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       }
+      }
+     },
+     "id": 26,
+     "name": "crt_on_off_effect"
+    }
+   ],
+   "components": {
+    "audio": {
+     "audioClip": {
+      "path": "audio/noise.mp3"
+     },
+     "autoPlay": false,
+     "looping": false,
+     "pitch": 1.0,
+     "volume": 1.0
+    },
+    "camera": {
+     "clear": true,
+     "clearColor": {
+      "a": 1.0,
+      "b": 0.0,
+      "g": 0.0,
+      "r": 0.0
+     },
+     "farPlane": 100.0,
+     "height": 180,
+     "layers": 16,
+     "main": false,
+     "nearPlane": 0.0,
+     "render": true,
+     "useDepthStencil": true,
+     "width": 360,
+     "zoom": 1.0
+    },
+    "layer": {
+     "layer": 16
+    },
+    "scripts": {
+     "scripts": [
+      {
+       "data": {
+        "values": [
+         {
+          "name": "blur_iterations",
+          "type": 3,
+          "value": 5.0
+         },
+         {
+          "name": "cutoff_val",
+          "type": 3,
+          "value": 0.0
+         }
+        ]
+       },
+       "script": {
+        "path": "scripts/post_processing/bloom.lua"
+       }
+      },
+      {
+       "data": {
+        "values": [
+         {
+          "name": "crt_strenght",
+          "type": 3,
+          "value": 0.30000001192092896
+         },
+         {
+          "name": "chrom",
+          "type": 3,
+          "value": 1.0
+         }
+        ]
+       },
+       "script": {
+        "path": "scripts/post_processing/crt.lua"
+       }
+      }
+     ]
+    },
+    "transform": {
+     "position": {
+      "x": 10000.0,
+      "y": 10000.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     }
+    },
+    "ui_element": {
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "dimensions": {
+      "x": 360.0,
+      "y": 180.0
+     },
+     "enabled": true,
+     "inputType": 3,
+     "offset": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "parentScale": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "pivot": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "rotation": 0.0
+    },
+    "ui_root": {
+     "scale": 1.0
+    }
+   },
+   "id": 14,
+   "name": "crt_camera"
+  },
+  {
+   "children": [
+    {
+     "children": null,
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": [
+           {
+            "name": "camera_name",
+            "type": 4,
+            "value": "crt_camera"
+           }
+          ]
+         },
+         "script": {
+          "path": "scripts/post_processing/get_target.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 128.0,
+        "y": 128.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_image": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "flipX": false,
+       "flipY": false,
+       "image": {
+        "path": "sprites/submarine.png"
+       }
+      }
+     },
+     "id": 6,
+     "name": "post_process_result"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "dimensions": {
+          "x": 256.0,
+          "y": 16.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": -3.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "Controls",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 1048588,
+       "name": "text"
+      },
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "dimensions": {
+          "x": 256.0,
+          "y": 16.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": -25.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "[Arrows] Move",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 15,
+       "name": "text"
+      },
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "dimensions": {
+          "x": 256.0,
+          "y": 16.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": -45.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "[Space] Start",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 16,
+       "name": "text"
+      }
+     ],
+     "components": {
+      "ui_element": {
+       "anchor": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "dimensions": {
+        "x": 256.0,
+        "y": 66.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 0.4470588266849518,
+        "b": 0.38823530077934265,
+        "g": 0.38823530077934265,
+        "r": 0.38823530077934265
+       }
+      }
+     },
+     "id": 4,
+     "name": "bar"
+    }
+   ],
+   "components": {
+    "camera": {
+     "clear": true,
+     "clearColor": {
+      "a": 1.0,
+      "b": 0.0,
+      "g": 0.0,
+      "r": 0.0
+     },
+     "farPlane": 100.0,
+     "height": 0,
+     "layers": 16,
+     "main": true,
+     "nearPlane": 0.0,
+     "render": true,
+     "useDepthStencil": true,
+     "width": 0,
+     "zoom": 1.0
+    },
+    "layer": {
+     "layer": 16
+    },
+    "scripts": {
+     "scripts": [
+      {
+       "data": {
+        "values": null
+       },
+       "script": {
+        "path": "scripts/main_camera.lua"
+       }
+      }
+     ]
+    },
+    "transform": {
+     "position": {
+      "x": -10000.0,
+      "y": 10000.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     }
+    },
+    "ui_element": {
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "dimensions": {
+      "x": 255.0,
+      "y": 255.0
+     },
+     "enabled": true,
+     "inputType": 3,
+     "offset": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "parentScale": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "pivot": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "rotation": 0.0
+    },
+    "ui_root": {
+     "scale": 1.0
+    }
+   },
+   "id": 1,
+   "name": "main_camera"
+  }
+ ],
+ "components": null,
+ "id": 0,
+ "name": "root"
+}

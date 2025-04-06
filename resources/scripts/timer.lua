@@ -11,6 +11,7 @@ function update(delta)
         time = time + delta * 500
     elseif player.scripts.submarine.started then
         time = time + delta
+        entity.ui_element.enabled = true
     end
     local minutes = math.floor(time / 60)
     local seconds = math.floor(time % 60)

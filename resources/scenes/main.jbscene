@@ -509,8 +509,8 @@
            "enabled": true,
            "inputType": 3,
            "offset": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 65.0,
+            "y": 8.0
            },
            "parentScale": {
             "x": 0.0,
@@ -554,8 +554,8 @@
            "enabled": true,
            "inputType": 3,
            "offset": {
-            "x": -5.0,
-            "y": 1.0
+            "x": -30.0,
+            "y": 8.0
            },
            "parentScale": {
             "x": 0.0,
@@ -616,7 +616,7 @@
           "x": 90.0,
           "y": 1.0
          },
-         "enabled": true,
+         "enabled": false,
          "inputType": 3,
          "offset": {
           "x": 0.0,
@@ -809,7 +809,7 @@
           "x": 90.0,
           "y": 16.0
          },
-         "enabled": true,
+         "enabled": false,
          "inputType": 3,
          "offset": {
           "x": 0.0,
@@ -875,7 +875,7 @@
           "x": 90.0,
           "y": 16.0
          },
-         "enabled": true,
+         "enabled": false,
          "inputType": 3,
          "offset": {
           "x": 0.0,
@@ -1120,6 +1120,54 @@
        },
        "id": 25,
        "name": "retry"
+      },
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.25
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": false,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": -19.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "font": {
+          "path": "fonts/AldotheApache.ttf"
+         },
+         "fontSize": 16.0,
+         "horizontal": 1,
+         "text": "'Escape' to Exit",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 88,
+       "name": "exit"
       }
      ],
      "components": {
@@ -1176,7 +1224,7 @@
           },
           "sprite": {
            "color": {
-            "a": 1.0,
+            "a": 0.0,
             "b": 1.0,
             "g": 1.0,
             "r": 1.0
@@ -1221,7 +1269,7 @@
         },
         "sprite": {
          "color": {
-          "a": 1.0,
+          "a": 0.0,
           "b": 1.0,
           "g": 1.0,
           "r": 1.0
@@ -1281,7 +1329,7 @@
           },
           "sprite": {
            "color": {
-            "a": 1.0,
+            "a": 0.0,
             "b": 1.0,
             "g": 1.0,
             "r": 1.0
@@ -1326,7 +1374,7 @@
         },
         "sprite": {
          "color": {
-          "a": 1.0,
+          "a": 0.0,
           "b": 1.0,
           "g": 1.0,
           "r": 1.0
@@ -1397,14 +1445,6 @@
             "values": null
            },
            "script": {
-            "path": "scripts/dials/v_speed.lua"
-           }
-          },
-          {
-           "data": {
-            "values": null
-           },
-           "script": {
             "path": "scripts/dials/latency_dial.lua"
            }
           }
@@ -1412,7 +1452,7 @@
         },
         "sprite": {
          "color": {
-          "a": 1.0,
+          "a": 0.0,
           "b": 1.0,
           "g": 1.0,
           "r": 1.0
@@ -1457,7 +1497,7 @@
       },
       "sprite": {
        "color": {
-        "a": 1.0,
+        "a": 0.0,
         "b": 1.0,
         "g": 1.0,
         "r": 1.0
@@ -18473,7 +18513,18 @@
    "id": 13,
    "name": "treasure",
    "prefab": {
-    "patch": [],
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": 129.16665649414063
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/y",
+      "value": -299.1666564941406
+     }
+    ],
     "path": "prefabs/treasure.jbprefab"
    }
   },
@@ -18485,12 +18536,12 @@
      {
       "op": "replace",
       "path": "/components/transform/position/x",
-      "value": 72.55497741699219
+      "value": 37.166648864746094
      },
      {
       "op": "replace",
       "path": "/components/transform/position/y",
-      "value": -200.03811645507813
+      "value": -231.66665649414063
      },
      {
       "op": "replace",

@@ -20,7 +20,7 @@ function turn_on()
             entity.ui_element.dimensions.y = x * 4
         end)
         juice.routine.wait_seconds(0.5)
-        juice.routine.wait_seconds_func(0.2, function(x)
+        juice.routine.wait_seconds_func(0.1, function(x)
             entity.ui_element.parent_scale.y = x
             entity.ui_panel.color.a = 1.0 - x
             find_entity("crt_camera").scripts.crt.crt_strenght = 0.3 + (1.0 - x) * 4
