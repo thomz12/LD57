@@ -41,6 +41,15 @@ function on_physics(delta)
         next_ping = time + 5.0
         entity.audio.pitch = 1.0 + (math.random() - 0.5) * 0.1
         entity.audio:play()
+
+        juice.routine.create(function()
+            juice.routine.wait_seconds_func(5.0, function(x)
+                entity.transform.scale = juice.vec2.new(
+                    1 + juice.ease.in_elastic(1 - x) * 0.5,
+                    1 + juice.ease.in_elastic(1 - x) * 0.5
+                )
+            end)
+        end)
     end
 
     -- Store inputs in buffer to be delayed.

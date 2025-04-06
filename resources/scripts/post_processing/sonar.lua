@@ -1,5 +1,6 @@
 sonar_target = juice.graphics:create_render_target(180, 180)
 sonar_speed = 1.0
+sonar_noise = 0.0
 local angle = 0.0
 
 local command = juice.render_command.new()
@@ -28,8 +29,17 @@ uniform vec2 RESOLUTION;
 uniform sampler2D _texture;
 uniform sampler2D _sonarTex;
 uniform float _angle;
+uniform float _noise;
 
 in vec2 texCoord;
+
+float noise(vec2 pos, float time)
+{
+    float e = fract((time*0.01));
+    float cx  = pos.x*e;
+    float cy  = pos.y*e;
+    return fract(23.0*fract(2.0/fract(fract(cx*2.4/cy*23.0+pow(abs(cy/22.4),3.3))*fract(cx*time/pow(abs(cy),0.050)))));
+}
 
 void main()
 {
@@ -37,6 +47,9 @@ void main()
     vec2 sonar = vec2(texCoord.x - 0.5, texCoord.y - 0.5) * mat2(cos(_angle), sin(_angle), -sin(_angle), cos(_angle));
     color *= texture(_sonarTex, sonar * 0.5 + 0.5).r;
     FragColor = vec4(color, 1.0);
+
+    vec3 noiseVal = vec3(((0.5 + noise(texCoord, _angle) * 2.0 - 1.0) * _noise));
+    FragColor = vec4(color + noiseVal, 1.0);
 }
 ]]
 
@@ -72,6 +85,7 @@ function post_render()
     juice.graphics:push_render_target(sonar_target)
     juice.graphics:clear(juice.color.new(0, 0, 0, 0))
     command:add_uniform_float("_angle", angle)
+    command:add_uniform_float("_noise", sonar_noise)
     juice.graphics:command(command)
     juice.graphics:pop_render_target()
 end

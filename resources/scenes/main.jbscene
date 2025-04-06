@@ -157,6 +157,11 @@
           "name": "sonar_speed",
           "type": 3,
           "value": 2.0
+         },
+         {
+          "name": "sonar_noise",
+          "type": 3,
+          "value": 0.0
          }
         ]
        },
@@ -338,7 +343,7 @@
           "x": 90.0,
           "y": 1.0
          },
-         "enabled": false,
+         "enabled": true,
          "inputType": 3,
          "offset": {
           "x": 0.0,
@@ -1357,14 +1362,14 @@
        "data": {
         "values": [
          {
-          "name": "blur_iterations",
-          "type": 3,
-          "value": 5.0
-         },
-         {
           "name": "cutoff_val",
           "type": 3,
           "value": 0.0
+         },
+         {
+          "name": "blur_iterations",
+          "type": 3,
+          "value": 5.0
          }
         ]
        },

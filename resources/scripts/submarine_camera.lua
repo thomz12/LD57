@@ -17,5 +17,6 @@ function update(delta)
             math.floor(target_pos.y + 0.5),
             0.0)
         entity.transform.rotation = target.physics.velocity.x * 0.5
+        entity.scripts.sonar.sonar_noise = (target.scripts.submarine.latency / target.scripts.submarine.max_latency) * 0.1
     end
 end
