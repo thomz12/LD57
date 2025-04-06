@@ -6,6 +6,15 @@ open = false
 loaded = false
 loading = false
 
+local function uuid()
+    math.randomseed(os.time())
+    local template ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
+    return string.gsub(template, '[xy]', function (c)
+        local v = (c == 'x') and math.random(0, 0xf) or math.random(8, 0xb)
+        return string.format('%x', v)
+    end)
+end
+
 function start()
     high_scores_btn = entity:find_child("button_highscores")
     high_scores_btn.ui_element.on_mouse_enter = btn_mouse_enter
@@ -34,12 +43,13 @@ function start()
                                 if name_result then
                                     juice.info("Set username: " .. name)
                                     playfab.user_name = name
+                                    show()
                                 end
                             end)
                         else
                             playfab.user_name = get_profile_body.PlayerProfile.DisplayName
+                            show()
                         end
-                        show()
                     else
                         juice.warn("Failed to get player profile.")
                     end
