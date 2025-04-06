@@ -1,5 +1,6 @@
 blink_speed = 0.5
 local time = 0.0
+local collected = false
 
 function start()
     time = entity.transform.position.x + entity.transform.position.y
@@ -7,7 +8,9 @@ function start()
 end
 
 function on_collision(_, other)
-    if other.name == "submarine" then
+    if not collected and other.name == "submarine" then
+        collected = true
+        find_entity("submarine").scripts.treasure_collect.add_treasure()
         find_entity("flash_panel").scripts.flash.flash_color(juice.color.new(1, 1, 0, 0.2))
         entity:remove_component("sprite")
         entity.audio:play()
