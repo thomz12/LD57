@@ -34,6 +34,18 @@ function on_game_win()
         local minutes = math.floor(time / 60)
         local seconds = math.floor(time % 60)
         entity:find_child("total_time").ui_text.text = string.format("Time: %02.f:%02.f", minutes, seconds)
+
+        local stats = {}
+        stats["attempts"] = 1
+        stats["finish_time"] = math.floor(time)
+        stats["played_time"] = math.floor(time)
+
+        if playfab.signed_in then
+            playfab.update_player_statistics(stats, function(update_result, update_body)
+                juice.info("Stats update result: " .. update_result)
+            end)
+        end
+
     end)
 end
 
@@ -44,6 +56,17 @@ function on_game_over()
             entity.audio.volume = 1.0 - x
         end)
     end)
+
+    local time = find_entity("timer").scripts.timer.time
+    local stats = {}
+    stats["attempts"] = 1
+    stats["played_time"] = math.floor(time)
+
+    if playfab.signed_in then
+        playfab.update_player_statistics(stats, function(update_result, update_body)
+            juice.info("Stats update result: " .. tostring(update_result))
+        end)
+    end
 
     juice.routine.create(function()
         find_entity("main_camera").scripts.main_camera.shake_camera(3.0, 2.0)

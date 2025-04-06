@@ -303,6 +303,11 @@
           "value": false
          },
          {
+          "name": "won",
+          "type": 1,
+          "value": false
+         },
+         {
           "name": "ping_pitch_add",
           "type": 3,
           "value": 0.0
@@ -321,11 +326,6 @@
           "name": "max_latency",
           "type": 3,
           "value": 0.75
-         },
-         {
-          "name": "won",
-          "type": 1,
-          "value": false
          }
         ]
        },
@@ -344,7 +344,7 @@
          {
           "name": "need",
           "type": 3,
-          "value": 1.0
+          "value": 34.0
          }
         ]
        },

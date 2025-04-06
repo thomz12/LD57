@@ -1,8 +1,10 @@
 {
  "author": "Thom Zeilstra",
  "engineVersion": "0.3.0",
- "globalScripts": null,
+ "globalScripts": [
+  "scripts/global/playfab.lua"
+ ],
  "name": "LD57",
- "startScene": "scenes/splash.jbscene",
+ "startScene": "scenes/main_menu.jbscene",
  "version": "0.1.0"
 }
