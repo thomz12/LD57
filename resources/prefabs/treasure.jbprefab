@@ -25,7 +25,7 @@
    "density": 1.0,
    "friction": 0.5,
    "isSensor": true,
-   "radius": 4.284987926483154,
+   "radius": 7.9769182205200195,
    "restitution": 0.10000000149011612
   },
   "scripts": {
