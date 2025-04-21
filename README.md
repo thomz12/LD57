@@ -1,5 +1,5 @@
 # Ctrl + Dive 
-My Ludum Dare 57 entry. A game created in 48 hours in the weekend using my own game engine.
+My Ludum Dare 57 entry. A game created in 48 hours in the weekend using my own game engine around the theme `Depths`.
 
 Control a remote submarine to find all the required treasure. 🪙 Be careful though, the submarine is fragile and you will notice significant latency the deeper you go. 🛜
 
